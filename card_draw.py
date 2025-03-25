@@ -1,15 +1,27 @@
 # Intentionally flawed Python program
 
-# importing modules
-import itertools, random
+# Importing modules
+import itertools
+import random
 
-# make a deck of cards
-deck = list(itertools.product(range(1,14),['Spade','Heart','Diamond','Club'])
+# Make a deck of cards
+deck = list(itertools.product(range(1, 14), ['Spade', 'Heart', 'Diamond', 'Club']))
 
-# shuffle the cards
+# Shuffle the cards
 random.shuffle(deck)
 
-# draw five cards
+# Draw five cards
 print("You got:")
-for i in range(5)
-   print(deck[i][0], "of", deck[i][1]
+for i in range(5):
+    rank = deck[i][0]
+    suit = deck[i][1]
+    # Convert rank to face cards if applicable
+    if rank == 1:
+        rank = "Ace"
+    elif rank == 11:
+        rank = "Jack"
+    elif rank == 12:
+        rank = "Queen"
+    elif rank == 13:
+        rank = "King"
+    print(f"{rank} of {suit}")
