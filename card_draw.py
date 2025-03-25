@@ -13,8 +13,7 @@ random.shuffle(deck)
 # Draw five cards
 print("You got:")
 for i in range(5):
-    rank = deck[i][0]
-    suit = deck[i][1]
+    rank, suit = deck[i]
     # Convert rank to face cards if applicable
     if rank == 1:
         rank = "Ace"
